@@ -1,8 +1,163 @@
+:root {
+  --error: rgba(211, 97, 97, 0.788);
+  --success: #59c47d;
+}
+
 body {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   min-width: 360px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
+  
+  /* background: linear-gradient(0deg, var(--success), white, white) */
+}
+
+.form-box {
+  padding: 10px;
+}
+
+form {
+  color:#193B4D;;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  font-size: 25px;
+  width: 100%;
+  border: none;
+  font-weight: 100;
+  color:#263f4d;
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+label {
+  font-size: 20px ;
+  opacity: 0.7;
+}
+
+i {
+  margin: 0rem 1rem 0rem 0.5rem;
+}
+
+.input-box {
+  align-items: center;
+  display: flex;
+  border: solid 2px #263f4d;
+  height: 30px;
+  width: 600px;
+  margin: 0.5rem 0 0.2rem 0;
+  padding: 0.3rem;
+}
+
+.input-box:hover {
+  transform: scale(1.015);
+  transition: 0.1s ;
+}
+
+.input-box span {
+  margin: 0rem 0rem 0rem 0.5rem;
+}
+
+.input-box:focus-within{
+  outline: solid 3px #263f4d;
+}
+
+.address-box, .send-box, .amount-box {
+  margin-bottom: 30px;
+  height: 120px;
+
+  
+}
+
+
+#address-error, #amount-error, #otp-error {
+  color: red;
+  font-size: 20px;
+}
+
+.inactive {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: all 0.5s ease;
+}
+
+
+.page {
+  position: absolute;
+}
+
+.shift {
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%,-50%);
+  transition: all 0.5s ease;
+}
+
+.fa-arrow-down {
+  transform: rotate(225deg);
+}
+
+.next:hover .fa-arrow-down {
+  transform: rotate(-90deg);
+  transition: all 0.5s ease;
+}
+
+.next:hover {
+  outline: solid #263f4d 1px;
+
+  transform: scale(1.05);
+  transition: all 0.1s ease;
+}
+
+.next {
+  padding: 0.5rem;
+  width: 130px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  bottom: -5px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #263f4d;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-size: 20px;
+
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.fa-clipboard:hover{
+  cursor: pointer;
 }

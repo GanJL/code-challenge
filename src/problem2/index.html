@@ -6,24 +6,78 @@
 
   <!-- You may add more stuff here -->
   <link href="style.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
   <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <label for="input-address">ETH Address</label>
-    <input id="input-address" />
 
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
+  <div class="form-box">
 
-    <label for="input-otp">OTP Authentication</label>
-    <input type="number" id="input-otp" />
+    <form onsubmit="">
 
-    <button>SEND TOKENS</button>
-  </form>
+        <div class="page active">
+
+          <div class="address-box">
+            <label for="input-address">ETH Address</label>
+            <div class="tooltip">
+              <i class="fa-solid fa-circle-info fa-2xs"></i>
+              <div class="tooltiptext">0x123d475e13aa54a43a7421d94caa4459da021c77<i class="fa-solid fa-clipboard" onclick="clipboard(2)"></i></div>
+            </div>
+            <div class="input-box">
+              <input id="input-address" autocomplete="off" />
+            </div>
+            <span id="address-error"></span>
+          </div>
+
+          <div class="amount-box">
+            <label for="input-amount">Amount To Send</label>
+            <div class="input-box">
+              <i class="fa-brands fa-ethereum"></i><input type="number" id="input-amount" autocomplete="off"/><span>ETH</span>
+            </div>
+            <span id="amount-error"></span>
+          </div>
+          <div class="next">
+            Next <i class="fa-solid fa-arrow-down"></i> 
+          </div>
+
+
+        </div>
+
+        <div class="page inactive">
+
+          <div class="send-box">
+            <label for="input-otp">OTP Authentication</label>
+            <div class="tooltip">
+              <i class="fa-solid fa-circle-info fa-2xs"></i>
+              <div class="tooltiptext">123456<i class="fa-solid fa-clipboard" onclick="clipboard(1)"></i></div>
+            </div>
+            <div class="input-box">
+              <input id="input-otp" type="number" autocomplete="off"/>
+            </div>
+            <span id="otp-error"></span>
+          </div>
+
+          <div class="next" onclick="validateAddress()">
+            Send <i class="fa-solid fa-arrow-down"></i> 
+          </div>
+        </div>
+
+        <div class="page inactive">
+
+          Your transaction has been completed. 
+
+        </div>
+
+    </form>
+  </div>
   <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/75aad01bc6.js" crossorigin="anonymous"></script>
+
+
+
 </body>
 
 </html>
